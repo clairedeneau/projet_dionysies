@@ -17,9 +17,10 @@ public class Journee{
         this.candidats.add(aut1);
         this.candidats.add(aut2);
     }
-    
-    public int scoreMoment(){
-        
+
+    public int scoreMoment(int indiceMoment, Auteur candidat){
+        Epreuve ep = this.epreuves.get(indiceMoment);
+        return ep.getNbSpects()*candidat.getQualiteStyle(ep.getStyle());
     }
 
 
