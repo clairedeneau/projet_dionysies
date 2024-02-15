@@ -1,23 +1,28 @@
-import java.util.Map;
-import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Journee{
-    private Map<Style, Integer> matin;
-    private Map<Style, Integer> aprem;
-    private Map<Style, Integer> soiree;
+    private List<Auteur> candidats;
+    private List<Epreuve> epreuves;
     
-    
-    public Journee(Style matin, int mat, Style aprem, int ap, Style soiree, int soir) {
-        this.matin = new HashMap<>();
-        this.matin.put(matin, mat);
-        this.aprem = new HashMap<>();
-        this.aprem.put(aprem, ap);
-        this.soiree = new HashMap<>();
-        this.soiree.put(soiree, soir);
+    public Journee(Epreuve matin, Epreuve aprem, Epreuve soir) {
+        this.candidats = new ArrayList<>();
+        this.epreuves = new ArrayList<>();
+        this.epreuves.add(matin);
+        this.epreuves.add(aprem);
+        this.epreuves.add(soir);
     }
 
-    public int score_moment(){
+    public void ajouteCandidats(Auteur aut1, Auteur aut2){
+        this.candidats.add(aut1);
+        this.candidats.add(aut2);
+    }
+    
+    public int scoreMoment(){
         
     }
+
+
+
     
 }
